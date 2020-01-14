@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculatrice</title>
+<style>
+.block{
+    margin-left: 35vw;
+    margin-top: 20vw;
+}
+body {
+    background-color: #736e86;
+}
+.div1 {
+	background: #FFFFFF;
+	max-width: 230px;
+	padding: 55px;
+	box-shadow: 5px 5px 8px 1px rgb(70, 67, 67);
+}
+.div1 input {
+	background: #ebe8e8;
+	width: 100%;
+	border: none;
+    margin-bottom: 25px;
+	padding: 19px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.div1 button {
+	background: #646161;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: white;
+	font-size: 15px;
+}
+.div2 select {
+    background-color: #b4aeae;
+	border: none;
+	font-size: 15px;
+	height: 40px;
+	padding: 15px;
+	width: 230px;
+    margin-bottom: 2vw;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="block">
+        <div class="div1">
+
+        <form id="form">
+        <input id="text1" type="text" value="">
+        <div class="div2">
+
+            <select name="select" id="operateur">
+                <option value="+">+</option> 
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+
+        </div>
+        <input id="text2" type="text" value="">
+        <button type="submit" id="Try" name="submit">Try me!</button>
+        </form>
+
+        </div>
+    </div>
+</body>
+<script>
+ $(document).ready(function(){
+    $("#Try").click(function(){
+            event.preventDefault();
+            const form = event.target;
+
+            var msg = "Error :(";
+            var op = $('#operateur').val();
+            var nbr1 = $('#text1').val();
+            var nbr2 = $('#text2').val();
+
+            if (nbr1.includes('.') || nbr2.includes('.'))
+            {
+                alert(msg);
+                return;
+            }
+            nbr1 = parseInt(nbr1);
+            nbr2 = parseInt(nbr2);
+            if (nbr1 >= 0 && nbr2 >= 0)
+            {
+                if (op == "+")
+                    result(nbr1 + nbr2);
+                else if (op == "-")
+                    result(nbr1 - nbr2);
+                else if (op == "*")
+                    result(nbr1 * nbr2);
+                else if (op == "/")
+                {
+                    if (nbr2 == 0)
+                        result('It’s over 9000!');
+                    else
+                            result(nbr1 / nbr2);
+                }
+                else if (op == "%")
+                {
+                    if (nbr2 == 0)
+                        result('It’s over 9000!');
+                    else
+                        result(nbr1 % nbr2);
+                }
+            }
+            else
+            {
+                alert(msg);     
+            } 
+        });
+
+        function result(value)
+        {
+            console.log(value);
+            alert(value);
+        }
+
+ });
+ setInterval("alert('Please, use me...')",30000);
+
+</script>
+</html>

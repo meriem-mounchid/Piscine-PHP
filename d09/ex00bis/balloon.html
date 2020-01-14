@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon</title>
+    <style>
+    #div1
+    {
+        background: red;
+        width: 200px;
+        height: 200px; 
+        border-radius: 50%;
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="div1"></div>
+    <script>
+        var color = ["red", "green", "blue"];
+        i = 0;
+        height = 200;
+        width = 200;
+        $(document).ready(function () {
+            $("div").click(function ()
+            {
+            i = i + 1;
+            if (i > 2)
+                i = 0;
+            $('#div1')[0].style.background = color[i];
+            height = height + 10;
+            width = width + 10;
+            
+            if (height > 420)
+            {
+                height = 200;
+                width = 200;
+            }
+            $('#div1')[0].style.height = String(height) + "px";
+            $('#div1')[0].style.width = String(width) + "px";
+            });
+            $("div").mouseleave(function () {
+            i = i - 1;
+            if (i < 0)
+                i = 2;
+            $('#div1')[0].style.background = color[i];
+            height = height - 5;
+            width = width - 5;
+            if (height <= 200)
+            {
+                height = 200;
+                width = 200;
+            }
+            $('#div1')[0].style.height = String(height) + "px";
+            $('#div1')[0].style.width = String(width) + "px";
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+body {
+    background: rgb(85, 83, 83);
+}
+.container {
+    display: grid;
+    width: 1700px;
+    margin-left: 180px;
+    grid-template-areas: 
+    "header header header header header"
+    "sideleft main main main sideright"
+    ;
+    grid-gap: 20px;
+}
+.header {
+    grid-area: header;
+    background: rgb(146, 144, 144);
+    border: 2px solid rgb(146, 144, 144);
+    height: 120px;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px black;
+}
+.sideLeft {
+    height: 500px;
+    width: 200px;
+    margin-left: 40px;
+    border-radius: 20px;
+    grid-area: sideleft;
+    background: rgb(146, 144, 144);
+    border: 2px solid rgb(146, 144, 144);
+    box-shadow: 10px 5px 10px black;
+}
+
+.main {
+    height: 700px;
+    width: 1180px; 
+    border-radius: 20px;
+    grid-area: main;
+    background: rgb(146, 144, 144);
+    border: 2px solid rgb(146, 144, 144);
+    box-shadow: 10px 5px 10px black;
+}
+.sideRight {
+    height: 500px;
+    width: 200px;
+    margin-right: 40px;
+    border-radius: 20px;
+    grid-area: sideright;
+    background: rgb(146, 144, 144);
+    border: 2px solid rgb(146, 144, 144);
+    box-shadow: 10px 5px 10px black;
+}
+#reload {
+    position: fixed;
+    width: 17px;
+    height: 17px;
+    right: 220px;
+    top: 20px;
+}
+
+#close {
+    position: fixed;
+    width : 17px;
+    height: 17px;
+    right : 220px;
+    top: 100px;
+}
+
+#loupe {
+    position: fixed;
+    height: 130px; 
+    width: 230px;
+    right: 240px;
+    top: 20px;
+}
+#day42 {
+    position: absolute;
+    height: 100px; 
+    width: 400px;
+    left : 200px;
+    top: 15px;
+}
+#left{
+    margin-top: 15px;
+    width : 80px;
+    height: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#cluster {
+    margin: 15px;
+    width : 97.5%;
+    height: 96%;
+}
+
+.brick{
+    background-image: url("resources/brick.jpg");
+    width: 171px;
+    height: 88px;
+    margin-left: 15px;
+}
+h1 {
+        position: absolute;
+        top: 380px;
+        right: 43px;
+        width: 210px;
+        height: 160px;
+}
+h2 {
+    position: absolute;
+    top: 390px;
+    left: 400px;
+    width: 100px;
+    height: 240px;
+}
+.tab_vert {
+    position: fixed;
+    top: 36vw;
+    left: 6vw;
+    width: 650px;
+    height: 230px;
+    border: 1px solid #80f880;
+    background: #80f880;
+    box-shadow: 10px 5px 10px black;
+    border-radius: 20px;
+}
+p {
+    margin: 9px;
+    font-size:130%;
+}
+.red {
+    border: red;
+}

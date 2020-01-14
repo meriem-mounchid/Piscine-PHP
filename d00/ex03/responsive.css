@@ -1,0 +1,34 @@
+* {
+    margin: 0px;
+}
+td {
+    border: 1px solid black;
+    padding: 1px;
+    text-align: center;
+}
+tr#tr01 {
+    background-color: #31f3d9;
+}
+tr#tr02 {
+    background-color: #3be2e2;
+}
+.symbol{
+    text-align: center;
+    font-size: 1.2vw;
+}
+.anbr{
+    vertical-align:bottom;
+    text-align: left;
+    font-size: 0.75vw;
+}   
+.amass{
+    text-align: right;
+    vertical-align: top;
+    font-size: 1vw;
+}
+p {
+    color: black;
+}
+.img-contained {
+    text-align: center;
+}

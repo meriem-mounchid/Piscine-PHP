@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(https://iheartvegetables.com/wp-content/uploads/2019/04/Brussels-Sprout-Tacos-19-of-19.jpg);
+    background-size: cover;
+}
+.menu-bar {
+    background-color: #9dc3e5;
+    text-align: center;
+}
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+}
+.menu-bar ul li {
+    width: 120px;
+    height: 50px;
+    padding: 15px;
+}
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #eeeecf;
+}
+.menu-bar ul li:hover {
+    background: #7f99af;
+}
+.n0 {
+    display: none; 
+}
+.menu-bar ul li:hover .n0 {
+    display: block;
+    position: absolute;
+    background: #eb7676; 
+    margin-top: 15px;
+    margin-left: -15px;
+}
+.menu-bar ul li:hover .n0 ul {
+    display: block;
+    margin: 0;
+}
+.menu-bar ul li:hover .n0 ul li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    text-align: left;
+}
+.menu-bar ul li:hover .n0 ul li a:hover {
+    color: #b11b41;
+}

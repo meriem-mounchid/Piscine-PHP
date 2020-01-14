@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculatrice</title>
+<style>
+.block{
+    margin-left: 35vw;
+    margin-top: 20vw;
+}
+body {
+    background-color: #736e86;
+}
+.div1 {
+	background: #FFFFFF;
+	max-width: 230px;
+	padding: 55px;
+	box-shadow: 5px 5px 8px 1px rgb(70, 67, 67);
+}
+.div1 input {
+	background: #ebe8e8;
+	width: 100%;
+	border: none;
+    margin-bottom: 25px;
+	padding: 19px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+.div1 button {
+	background: #646161;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: white;
+	font-size: 15px;
+}
+.div2 select {
+    background-color: #b4aeae;
+	border: none;
+	font-size: 15px;
+	height: 40px;
+	padding: 15px;
+	width: 230px;
+    margin-bottom: 2vw;
+}
+</style>
+</head>
+<body>
+    <div class="block">
+        <div class="div1">
+
+        <form id="form">
+        <input id="text1" type="text" value="">
+        <div class="div2">
+
+            <select name="select">
+                <option value="+">+</option> 
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+
+        </div>
+        <input id="text2" type="text" value="">
+        <button type="submit" id="submit" name="submit">Try me!</button>
+        </form>
+
+        </div>
+    </div>
+</body>
+<script>
+
+function calcul(event)
+{
+    event.preventDefault();
+    const form = event.target;
+
+    var msg = "Error :(";
+    var op = form.elements["select"].value;
+    var nbr1 = form.elements["text1"].value;
+    var nbr2 = form.elements["text2"].value;
+
+    if (nbr1.includes('.') || nbr2.includes('.'))
+    {
+        alert(msg);
+        return;
+    }
+    nbr1 = parseInt(nbr1);
+    nbr2 = parseInt(nbr2);
+    if (nbr1 >= 0 && nbr2 >= 0)
+    {
+        if (op == "+")
+		    result(nbr1 + nbr2);
+        else if (op == "-")
+			result(nbr1 - nbr2);
+        else if (op == "*")
+			result(nbr1 * nbr2);
+        else if (op == "/")
+        {
+            if (nbr2 == 0)
+				result('It’s over 9000!');
+            else
+					result(nbr1 / nbr2);
+        }
+        else if (op == "%")
+        {
+            if (nbr2 == 0)
+				result('It’s over 9000!');
+            else
+				result(nbr1 % nbr2);
+        }
+    }
+    else
+    {
+        alert(msg);     
+    } 
+}
+
+function result(value)
+{
+    console.log(value);
+    alert(value);
+}
+function use_me()
+{
+    var msg = "Please, use me...";
+    alert(msg);
+}
+setInterval(use_me, 30000);
+
+document.getElementById("form").addEventListener("submit", calcul);
+
+</script>
+</html>
